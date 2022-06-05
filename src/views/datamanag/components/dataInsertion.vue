@@ -7,32 +7,10 @@
       <div id="editorDiv" />
       <div id="lengthDiv" />
     </div>
-    <!-- 小工具 -->
-    <div class="gadget">
-      <ul>
-        <el-tooltip class="item" effect="light" content="放大" placement="right">
-          <li>
-            <i class="el-icon-share" />
-          </li>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="缩小" placement="right">
-          <li>
-            <i class="el-icon-share" />
-          </li>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="Home" placement="right">
-          <li>
-            <i class="el-icon-share" />
-          </li>
-        </el-tooltip>
-      </ul>
-    </div>
     <!-- 加载Excel+地图加点+插入数据库 -->
     <div id="hezi">
       <div class="upload">
-        <el-upload action="" :multiple="false" :show-file-list="false" accept="csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" :http-request="httpRequest">
-          <el-button ref="upload" size="mini" type="primary">上传文件</el-button>
-        </el-upload>
+
       </div>
       <el-button id="join" ref="join" @click="xian()">加点</el-button>
       <el-button id="editor" ref="editor">插入</el-button>
@@ -43,12 +21,20 @@
       <div class="tool">
         <el-row :gutter="5">
           <el-col :span="2">
-            <el-button type="success" size="mini" icon="el-icon-refresh">重置表单</el-button>
+            <el-upload action="" accept="csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" :http-request="httpRequest">
+          <el-button  size="mini" class="upload" type="primary">上传文件</el-button>
+        </el-upload>
           </el-col>
           <el-col :span="2">
-            <el-button type="primary" size="mini" :icon="icon" @click="clear()">取消选择</el-button>
+            <el-button size="mini" class="cancel" icon="el-icon-refresh" @click="clear()">取消选择</el-button>
           </el-col>
-          <el-col :span="16">
+          <el-col :span="2">
+            <el-button size="mini" class="save" icon="el-icon-document-copy" @click="saveExcel">保存数据</el-button>
+          </el-col>
+          <el-col :span="2">
+            <el-button size="mini" class="download" :icon="icon" @click="download">下载模板</el-button>
+          </el-col>
+          <el-col :span="11">
             <div>123</div>
           </el-col>
           <el-col :span="4">
@@ -306,6 +292,8 @@
 <script>
 import { loadModules } from 'esri-loader'
 import XLSX from 'xlsx'
+import axios from 'axios'
+import { Message } from "element-ui";
 
 export default {
   name: 'DataInsertion',
@@ -336,7 +324,8 @@ export default {
         { value: '女', label: '女' }
       ],
       // 移动
-      canMove: false
+      canMove: false,
+      alldata:[]
     }
   },
   watch: {
@@ -360,6 +349,36 @@ export default {
     this._Init()
   },
   methods: {
+    saveExcel(){
+      var that = this
+      var json = JSON.stringify(this.tableData);
+      console.log(json)
+      that.$store.dispatch('ncity/upTable',json).then((dataz) => {
+        console.log(dataz);
+        Message({
+          showClose: true,
+          message: dataz.msg,
+          type: 'success',
+          duration: 3 * 1000,
+        });
+      }).catch(() => {
+      })
+    },
+    download () {          
+    axios.get("file/sample.xls", {   //静态资源文件夹public            
+        responseType: 'blob',          
+    }).then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));            
+        const link = document.createElement('a');            
+        let fname = '示例表.xls';            
+        link.href = url;            
+        link.setAttribute('download', fname);            
+        document.body.appendChild(link);            
+        link.click();          
+    }).catch(error => {            
+        console.log('error:'+JSON.stringify(error))          
+    });        
+},
     // 移动
     moveo(event) {
       var that = this
@@ -480,15 +499,9 @@ export default {
         const exl = XLSX.utils.sheet_to_json(workbook.Sheets[exlname]) // 生成json表格内容
         // 将 JSON 数据挂到 data 里
         this.tableData = exl
-        // this.tableData = this.tableData.slice((this.currentPage - 1) * this.pagesize, this.currentPage * this.pagesize)
-        // that.$refs.table.reloadData(this.tableData)
+        // this.saveExcel();//将数据传入至后端保存
         // 加载至地图
         that.$refs.join.$el.click()
-        console.log(this.tableData)
-        // 加载至数据库
-        // setTimeout(function() {
-        //   that.$refs.editor.$el.click()
-        // }, 10000)
       }
       fileReader.readAsBinaryString(file)
     },
@@ -578,7 +591,8 @@ export default {
             }
           }
         }
-        var url = 'http://1.117.71.181:6080/arcgis/rest/services/cs/cspts/FeatureServer/0'
+        // var url = 'http://1.117.71.181:6080/arcgis/rest/services/cs/cspts/FeatureServer/0'
+        var url = 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/lk/MapServer'
         var WH_Water = new FeatureLayer({
           url: url,
           renderer: norrender,
@@ -792,6 +806,32 @@ export default {
   color: #ffffff;
   font-size: 17px;
 }
+.tool .upload {
+  background-color: rgb(127, 189, 255);
+}
+.tool .cancel {
+  background-color: rgb(61, 125, 189);
+}
+.tool .save {
+  background-color: rgb(106, 151, 164);
+}
+.tool .download {
+  background-color: rgb(19, 175, 218);
+}
+.tool >>> .el-input-group__append {
+  height: 100%;
+  width: 20%;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.tool .el-button {
+  border: none;
+  color: #fff;
+}
+.body >>> .ux-grid{
+  background: rgb(106, 142, 156);
+}
+
 </style>
 <style>
 .adddate .zujian .esri-editor__scroller {
@@ -817,5 +857,9 @@ export default {
 }
 .adddate .elx-cell--edit-icon {
   display: none;
+}
+.el-button--default {
+  background: #8b91e3;
+  color: #fff;
 }
 </style>
