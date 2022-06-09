@@ -4,14 +4,16 @@
       <li>
         <el-tooltip class="item" effect="dark" content="舆情监测" placement="right-end">
           <el-link :underline="false" href="/#/sentiment/index">
-            <span class="imgz"><icon-svg icon-class="icon-yuqingjiance" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-yuqingjiance" />
+            <span class="font1">舆情</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="情感分析" placement="right-end">
           <el-link :underline="false" href="/#/sentiment/emotionalAnalysis">
-            <span class="imgz"><icon-svg icon-class="icon-qingganfenxi" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-qingganfenxi" />
+            <span class="font1">情感</span></span>
           </el-link>
         </el-tooltip>
       </li>
@@ -80,11 +82,15 @@ export default {
   margin: 30px 0;
 }
 #router ul li .imgz {
+  line-height: 1px;
   font-size: 25px;
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.5s;
 }
 #router ul li .imgz:hover {
   color: rgba(255, 255, 255, 0.9);
+}
+.font1 {
+  font-size: 7px;
 }
 </style>

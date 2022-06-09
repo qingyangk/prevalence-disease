@@ -4,28 +4,32 @@
       <li>
         <el-tooltip class="item" effect="dark" content="模拟预测" placement="right-end">
           <el-link :underline="false" href="/#/forecast/index">
-            <span class="imgz"><icon-svg icon-class="icon-weiwangguanicon-defuben-" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-weiwangguanicon-defuben-" />
+            <span class="font1">SIR</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="SEIR模拟" placement="right-end">
           <el-link :underline="false" href="/#/forecast/seir">
-            <span class="imgz"><icon-svg icon-class="icon-xinguanfeiyan-miqiejiechuzhe" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-xinguanfeiyan-miqiejiechuzhe" />
+            <span class="font1">SEIR</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="城市模拟" placement="right-end">
           <el-link :underline="false" href="/#/forecast/CForecast">
-            <span class="imgz"><icon-svg icon-class="icon-miqiejiechuzhesuyuan" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-miqiejiechuzhesuyuan" />
+            <span class="font1">模拟</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="城市预测" placement="right-end">
           <el-link :underline="false" href="/#/forecast/arima">
-            <span class="imgz"><icon-svg icon-class="icon-yucefuwu" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-yucefuwu" />
+            <span class="font1">预测</span></span>
           </el-link>
         </el-tooltip>
       </li>
@@ -94,11 +98,15 @@ export default {
   margin: 30px 0;
 }
 #router ul li .imgz {
+  line-height: 1px;
   font-size: 25px;
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.5s;
 }
 #router ul li .imgz:hover {
   color: rgba(255, 255, 255, 0.9);
+}
+.font1 {
+  font-size: 7px;
 }
 </style>

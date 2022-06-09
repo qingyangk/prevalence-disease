@@ -4,35 +4,40 @@
       <li>
         <el-tooltip class="item" effect="dark" content="密接查询" placement="right-end">
           <el-link :underline="false" href="/#/communicationmap/index">
-            <span class="imgz"><icon-svg icon-class="icon-jiechu" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-jiechu" />
+            <span class="font1">密接</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="传播演示" placement="right-end">
           <el-link :underline="false" href="/#/communicationmap/graphMovie">
-            <span class="imgz"><icon-svg icon-class="icon-wangluochuanbo" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-wangluochuanbo" />
+            <span class="font1">传播</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="地域风险" placement="right-end">
           <el-link :underline="false" href="/#/communicationmap/riskRegion">
-            <span class="imgz"><icon-svg icon-class="icon-a1" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-a1" />
+            <span class="font1">地域</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="出行风险" placement="right-end">
           <el-link :underline="false" href="/#/communicationmap/riskTravel">
-            <span class="imgz"><icon-svg icon-class="icon-chuhang" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-chuhang" />
+            <span class="font1">出行</span></span>
           </el-link>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip class="item" effect="dark" content="气象模拟" placement="right-end">
           <el-link :underline="false" href="/#/communicationmap/meteorological">
-            <span class="imgz"><icon-svg icon-class="icon-fengxiang" /></span>
+            <span class="imgz"><icon-svg icon-class="icon-fengxiang" />
+            <span class="font1">气象</span></span>
           </el-link>
         </el-tooltip>
       </li>
@@ -101,11 +106,15 @@ export default {
   margin: 30px 0;
 }
 #router ul li .imgz {
+  line-height: 1px;
   font-size: 25px;
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.5s;
 }
 #router ul li .imgz:hover {
   color: rgba(255, 255, 255, 0.9);
+}
+.font1 {
+  font-size: 7px;
 }
 </style>
