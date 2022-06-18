@@ -326,7 +326,7 @@ export default {
   border-bottom: 2px dashed rgba(219, 219, 219, 0.555);
 }
 #conditionx ul .cpublic:nth-child(6) {
-  top: 90%;
+  top: 88%;
   height: 10%;
 }
 #conditionx ul .cpublic:nth-child(1) >>> .el-input__inner,

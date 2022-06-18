@@ -2431,7 +2431,7 @@ export default {
   top: calc(40% + 80px);
   /* border: 1.5px solid #0fafeb; */
   /* background: url("./public/img/bg.png") rgba(255, 255, 255, 0.1); */
-  background: url("./public/img/bn.png") ;
+  background: url("./public/img/bn3.png") ;
   background-size: 100% 100%;
 }
 #Communicationmap #right .bottom .find {

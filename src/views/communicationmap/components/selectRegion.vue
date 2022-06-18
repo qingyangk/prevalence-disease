@@ -361,7 +361,7 @@ ul, p {
   width: 180px;
   height: 45px;
   line-height: 45px;
-  top: 5px;
+  top: 13px;
   right: 410px !important;
   /* background-color: rgba(40, 43, 57, 0.8); */
   background-color: rgba(79, 133, 177, 0.3);

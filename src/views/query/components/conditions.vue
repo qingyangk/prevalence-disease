@@ -4,7 +4,7 @@
       <li class="cpublic">
         <div class="cpubliz">
           <el-row :gutter="5">
-            <el-col :span="5">
+            <el-col class="search">
               <p style="font-weight: bold;">简单查询：</p>
             </el-col>
             <el-col :span="14">
@@ -214,5 +214,9 @@ export default {
   padding: 0;
   padding: 0 25px;
   text-align: center;
+}
+.search {
+  width: 19%;
+  margin-left: 7px;
 }
 </style>

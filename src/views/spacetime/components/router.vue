@@ -66,7 +66,7 @@
           >
             <el-link :underline="false" href="/#/spacetime/dili">
               <span class="imgz"><icon-svg icon-class="icon-earth" />
-              <span class="font1">加权</span></span>
+              <span class="font1">回归</span></span>
             </el-link>
           </el-tooltip>
         </li>
