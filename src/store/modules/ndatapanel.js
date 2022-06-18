@@ -65,7 +65,8 @@ const actions = {
   QDiseaseJson({ commit }, data) {
     return new Promise((resolve, reject) => {
       QDiseaseJson().then(response => {
-        // const { dates } = response
+        // const { dates } = responseitype
+        console.log(response.dates)
         resolve(response.dates)
       }).catch(error => {
         reject(error)

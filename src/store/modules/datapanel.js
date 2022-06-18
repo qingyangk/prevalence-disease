@@ -1,8 +1,30 @@
-import { json, maps, mapx, mapz, qTotal, qStatistics, AdministrativeRegion, Severe, Month, qVirustype, qCriticalpopulation, qSeverevirus, qSevereagegroup, qThedead, qDeathvirus, qDeathagegroup, qAgestatistics, qYearstatistics, qNormalagegroup, qCrowddiagnosis, DAReduction, DRMorbidity } from '@/api/datapanel'
+import {
+  json,
+  maps,
+  mapx,
+  mapz,
+  qTotal,
+  qStatistics,
+  AdministrativeRegion,
+  Severe,
+  Month,
+  qVirustype,
+  qCriticalpopulation,
+  qSeverevirus,
+  qSevereagegroup,
+  qThedead,
+  qDeathvirus,
+  qDeathagegroup,
+  qAgestatistics,
+  qYearstatistics,
+  qNormalagegroup,
+  qCrowddiagnosis,
+  DAReduction,
+  DRMorbidity
+} from '@/api/datapanel'
 
 const getDefaultState = () => {
-  return {
-  }
+  return {}
 }
 
 const state = getDefaultState()
@@ -15,9 +37,13 @@ const mutations = {
 
 const actions = {
   // 地块查询
-  json({ commit }, data) {
+  json({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      json({ name: data }).then(response => {
+      json({
+        name: data
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -26,9 +52,13 @@ const actions = {
     })
   },
   // 市一级查询
-  maps({ commit }, data) {
+  maps({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      maps({ name: data }).then(response => {
+      maps({
+        name: data
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -37,9 +67,13 @@ const actions = {
     })
   },
   // 县一级查询
-  mapx({ commit }, data) {
+  mapx({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      mapx({ name: data }).then(response => {
+      mapx({
+        name: data
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -48,9 +82,13 @@ const actions = {
     })
   },
   // 镇一级查询
-  mapz({ commit }, data) {
+  mapz({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      mapz({ name: data }).then(response => {
+      mapz({
+        name: data
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -59,7 +97,9 @@ const actions = {
     })
   },
   // 陕西省总诊断病例 重症病例 死亡病例
-  qTotal({ commit }) {
+  qTotal({
+    commit
+  }) {
     return new Promise((resolve, reject) => {
       qTotal().then(response => {
         // const { dates } = response
@@ -70,7 +110,9 @@ const actions = {
     })
   },
   // 人群类型 病例类型 报告单位 年龄跨度
-  qStatistics({ commit }) {
+  qStatistics({
+    commit
+  }) {
     return new Promise((resolve, reject) => {
       qStatistics().then(response => {
         // const { dates } = response
@@ -81,9 +123,14 @@ const actions = {
     })
   },
   // 行政区地区确诊 地区重症 地址死亡
-  AdministrativeRegion({ commit }, data) {
+  AdministrativeRegion({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      AdministrativeRegion({ range: data.range, name: data.name }).then(response => {
+      AdministrativeRegion({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -92,9 +139,14 @@ const actions = {
     })
   },
   // 季度地区确诊 地区重症 地址死亡
-  Severe({ commit }, data) {
+  Severe({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      Severe({ range: data.range, name: data.name }).then(response => {
+      Severe({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -103,9 +155,14 @@ const actions = {
     })
   },
   // 季度地区确诊 地区重症 地址死亡
-  Month({ commit }, data) {
+  Month({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      Month({ range: data.range, name: data.name }).then(response => {
+      Month({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -114,9 +171,14 @@ const actions = {
     })
   },
   // 病毒类型
-  qVirustype({ commit }, data) {
+  qVirustype({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qVirustype({ range: data.range, name: data.name }).then(response => {
+      qVirustype({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -125,9 +187,14 @@ const actions = {
     })
   },
   // 重症人群
-  qCriticalpopulation({ commit }, data) {
+  qCriticalpopulation({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qCriticalpopulation({ range: data.range, name: data.name }).then(response => {
+      qCriticalpopulation({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -136,9 +203,14 @@ const actions = {
     })
   },
   // 重症病毒
-  qSeverevirus({ commit }, data) {
+  qSeverevirus({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qSeverevirus({ range: data.range, name: data.name }).then(response => {
+      qSeverevirus({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -147,9 +219,14 @@ const actions = {
     })
   },
   // 重症年龄组
-  qSevereagegroup({ commit }, data) {
+  qSevereagegroup({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qSevereagegroup({ range: data.range, name: data.name }).then(response => {
+      qSevereagegroup({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -158,9 +235,14 @@ const actions = {
     })
   },
   // 死亡人群
-  qThedead({ commit }, data) {
+  qThedead({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qThedead({ range: data.range, name: data.name }).then(response => {
+      qThedead({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -169,9 +251,14 @@ const actions = {
     })
   },
   // 死亡病毒
-  qDeathvirus({ commit }, data) {
+  qDeathvirus({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qDeathvirus({ range: data.range, name: data.name }).then(response => {
+      qDeathvirus({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -180,9 +267,14 @@ const actions = {
     })
   },
   // 死亡年龄组
-  qDeathagegroup({ commit }, data) {
+  qDeathagegroup({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qDeathagegroup({ range: data.range, name: data.name }).then(response => {
+      qDeathagegroup({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -191,9 +283,14 @@ const actions = {
     })
   },
   // 年龄诊断 重症 死亡
-  qAgestatistics({ commit }, data) {
+  qAgestatistics({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qAgestatistics({ range: data.range, name: data.name }).then(response => {
+      qAgestatistics({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -202,9 +299,14 @@ const actions = {
     })
   },
   // 年龄诊断 重症 死亡
-  qYearstatistics({ commit }, data) {
+  qYearstatistics({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qYearstatistics({ range: data.range, name: data.name }).then(response => {
+      qYearstatistics({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response)
       }).catch(error => {
@@ -213,9 +315,14 @@ const actions = {
     })
   },
   // 年龄组
-  qNormalagegroup({ commit }, data) {
+  qNormalagegroup({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qNormalagegroup({ range: data.range, name: data.name }).then(response => {
+      qNormalagegroup({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -224,9 +331,14 @@ const actions = {
     })
   },
   // 人群
-  qCrowddiagnosis({ commit }, data) {
+  qCrowddiagnosis({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      qCrowddiagnosis({ range: data.range, name: data.name }).then(response => {
+      qCrowddiagnosis({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -235,9 +347,14 @@ const actions = {
     })
   },
   // 诊断-发病
-  DAReduction({ commit }, data) {
+  DAReduction({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      DAReduction({ range: data.range, name: data.name }).then(response => {
+      DAReduction({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -246,9 +363,14 @@ const actions = {
     })
   },
   // 死亡-发病
-  DRMorbidity({ commit }, data) {
+  DRMorbidity({
+    commit
+  }, data) {
     return new Promise((resolve, reject) => {
-      DRMorbidity({ range: data.range, name: data.name }).then(response => {
+      DRMorbidity({
+        range: data.range,
+        name: data.name
+      }).then(response => {
         // const { dates } = response
         resolve(response.datas)
       }).catch(error => {
@@ -264,4 +386,3 @@ export default {
   mutations,
   actions
 }
-
