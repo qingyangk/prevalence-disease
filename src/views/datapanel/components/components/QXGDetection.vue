@@ -315,12 +315,12 @@ display: none;
 }
 #QXGDetection #top .public .cent {
   position: absolute;
-  width: 100%;
+  width: 88%;
   height: calc(100% - 10px);
   bottom: 0;
-  left: 0;
+  left: 7%;
   background-color: rgba(79, 133, 177, 0.3);
-  background-image: url("../public/img/ba.png");
+  /* background-image: url("../public/img/ba.png"); */
   background-size: 100% 100%;
   text-align: center;
   color: rgba(238, 234, 234, 0.9);

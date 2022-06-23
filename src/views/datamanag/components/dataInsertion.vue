@@ -35,7 +35,7 @@
             <el-button size="mini" class="download" :icon="icon" @click="download">下载模板</el-button>
           </el-col>
           <el-col :span="11">
-            <div>123</div>
+            <div>数据管理</div>
           </el-col>
           <el-col :span="4">
             <el-input v-model="find" size="mini" clearable placeholder="请输入查询内容" class="input-with-select">
@@ -592,7 +592,8 @@ export default {
           }
         }
         // var url = 'http://1.117.71.181:6080/arcgis/rest/services/cs/cspts/FeatureServer/0'
-        var url = 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/lk/MapServer'
+        // var url = 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/lk/MapServer'
+        var url = 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/lk/MapServer/2'
         var WH_Water = new FeatureLayer({
           url: url,
           renderer: norrender,

@@ -71,8 +71,8 @@ export default {
         legend: [
           {
             data: ['诊断', '重症'],
-            right: '0',
-            top: '2%',
+            right: '3%',
+            top: '3%',
             orient: 'horizontal',
             textStyle: {
               color: '#ffffff'
@@ -80,8 +80,8 @@ export default {
           },
           {
             data: ['死亡'],
-            right: '0',
-            top: '12%',
+            right: '3%',
+            top: '13%',
             orient: 'horizontal',
             textStyle: {
               color: '#ffffff'

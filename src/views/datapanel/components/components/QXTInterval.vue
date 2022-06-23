@@ -69,8 +69,8 @@ export default {
         },
         legend: {
           data: ['发病至诊断', '发病至死亡'],
-          right: '0',
-          top: '2%',
+          right: '3%',
+          top: '3%',
           orient: 'vertical', // 垂直显示
           textStyle: {
             color: '#ffffff'

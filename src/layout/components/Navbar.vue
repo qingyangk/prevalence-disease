@@ -191,7 +191,7 @@ export default {
       } else {
         path = path.slice(1, path.lastIndexOf("/"));
       }
-      if (path.includes("datamanag") ) {
+      if (path.includes("datamanag")) {
         this.index = 2;
       } else {
         this.index = that.route.indexOf(path);
@@ -302,11 +302,7 @@ export default {
 .xin {
   background: url("./public/tops.png") no-repeat center center !important; /*加载背景图*/ /* 背景图不平铺 */
   background-size: cover !important; /* 让背景图基于容器大小伸缩 */
-  background-color: rgb(
-    11,
-    18,
-    46
-  ) !important; /* 设置背景颜色，背景图加载过程中会显示背景色 */
+  background-color: rgb(11,18,46) !important; /* 设置背景颜色，背景图加载过程中会显示背景色 */
 }
 .navbar {
   position: relative;

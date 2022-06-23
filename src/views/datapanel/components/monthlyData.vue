@@ -89,9 +89,10 @@ export default {
         },
         legend: {
           data: ['确诊数', '死亡数'],
-          right: 'left',
+          right: '5%',
           orient: 'horizontal',
           align: 'auto',
+          top:'4%',
           textStyle: {
             color: '#ffffff',
             fontSize: 13

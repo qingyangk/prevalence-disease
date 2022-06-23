@@ -12,7 +12,7 @@
           >
             <el-link :underline="false" href="/#/spacetime/index">
               <span class="imgz"><icon-svg icon-class="icon-tuoyuanti" />
-              <span class="font1">标准</span></span>
+              <span class="font1">椭圆</span></span>
             </el-link>
           </el-tooltip>
         </li>

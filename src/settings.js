@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '疾病分析',
+  title: '疾病流行',
 
   /**
    * @type {boolean} true | false

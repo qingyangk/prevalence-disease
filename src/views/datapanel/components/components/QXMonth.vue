@@ -74,8 +74,8 @@ export default {
         },
         legend: {
           data: ['诊断', '重症', '死亡'],
-          right: '0',
-          top: 'top',
+          right: '3%',
+          top: '3%',
           orient: 'vertical',
           textStyle: {
             color: '#ffffff'
