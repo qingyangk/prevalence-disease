@@ -323,7 +323,7 @@ export default {
   ); /* 设置背景颜色，背景图加载过程中会显示背景色 */
 }
 .navbar .harf {
-  font-size: 15px;
+  font-size: 12pt;
   color: #ffffff;
 }
 .navbar .lefts {
@@ -371,7 +371,7 @@ export default {
   /* margin-top: 10px; */
 }
 .navbar .harf {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 .navbar .activation {
   position: relative;
