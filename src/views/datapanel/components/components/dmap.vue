@@ -389,7 +389,7 @@ export default {
 #dmaps .hierarchy {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 20px;
   z-index: 10;
 }
 #dmaps .hierarchy li {
