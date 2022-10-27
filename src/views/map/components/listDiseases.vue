@@ -39,7 +39,11 @@ export default {
         if (that.name === '手足口病') {
           e = '陕西手足口点'
         } else {
-          e = that.name
+          e = that.name;
+          this.$message({
+          message: '当前疾病不支持',
+          type: 'error'
+        })
         }
         eventBum.$emit('type', e)
       }, 500)
@@ -58,7 +62,11 @@ export default {
       if (typc === '陕西手足口点') {
         that.name = '手足口病'
       } else {
-        that.name = typc
+        that.name = typc;
+        this.$message({
+          message: '当前疾病不支持',
+          type: 'error'
+        })
       }
     })
   },
@@ -67,7 +75,11 @@ export default {
       if (e === '陕西手足口点') {
         this.name = '手足口病'
       } else {
-        this.name = e
+        this.name = e;
+        this.$message({
+          message: '当前疾病不支持',
+          type: 'error'
+        })
       }
       eventBum.$emit('type', e)
     },

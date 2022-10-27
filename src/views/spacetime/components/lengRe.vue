@@ -35,8 +35,8 @@ export default {
       },
       xlengre: undefined,
       xianlengre: undefined,
-      url: 'http://110.40.187.212:6080/arcgis/rest/services/ShaanXiDisease/service/MapServer/6',
-      url12: 'http://110.40.187.212:6080/arcgis/rest/services/ShaanXiDisease/service/MapServer/7',
+      url: 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/ColdAndHotSpotAnalysis/MapServer/1',
+      url12: 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/ColdAndHotSpotAnalysis/MapServer/1',
       // 弹窗
       popupTemplate: {},
       popName: '',

@@ -57,8 +57,8 @@ export default {
       backxian: 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/lk/MapServer/0',
       xlengre: undefined,
       xianlengre: undefined,
-      url: 'http://110.40.187.212:6080/arcgis/rest/services/ShaanXiDisease/ztt/MapServer/1',
-      url12: 'http://110.40.187.212:6080/arcgis/rest/services/ShaanXiDisease/ztt/MapServer/0',
+      url: 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/ThematicMap/MapServer/1',
+      url12: 'http://114.98.239.36:6080/arcgis/rest/services/ShaanXiDisease/荧光图/MapServer/1',
       // 查询底图
       queryWhere: undefined,
       queryTask: undefined,
